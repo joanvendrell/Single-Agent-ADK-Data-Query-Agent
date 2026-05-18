@@ -42,7 +42,7 @@ Copy environment variables:
 cp .env.example .env
 ```
 
-Set `GOOGLE_API_KEY` in `.env` for ADK/Gemini usage.
+Set `LLM_API_KEY` and `MODEL` in `.env` for usage.
 
 ## Run the local deterministic CLI
 
