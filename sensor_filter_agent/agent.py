@@ -39,23 +39,6 @@ Tool usage:
 - For values below 30: use filter_type="value_range" and max_value=30.
 - For values between 20 and 30: use filter_type="value_range", min_value=20, and max_value=30.
 
-Examples:
-- "Show gas readings in Area A":
-  first call filter_records_adk with filter_type="location", filter_value="Area A".
-  Then pass the returned JSON string as previous_results_json and call filter_records_adk
-  with filter_type="sensor_type", filter_value="gas".
-
-- "Show gas anomalies in Zone 2 with value above 60":
-  first filter location="Zone 2".
-  Then pass the returned JSON string as previous_results_json and filter sensor_type="gas".
-  Then pass the returned JSON string as previous_results_json and filter anomaly_label=True.
-  Then pass the returned JSON string as previous_results_json and filter value_range with min_value=60.
-
-- "Show gas readings above 50 that are not anomalies":
-  first filter sensor_type="gas".
-  Then pass the returned JSON string as previous_results_json and filter value_range with min_value=50.
-  Then pass the returned JSON string as previous_results_json and filter anomaly_label=False.
-
 Rules:
 - Do not calculate counts, averages, sums, percentages, trends, statistics, or aggregations.
 - Do not answer general conversation.
