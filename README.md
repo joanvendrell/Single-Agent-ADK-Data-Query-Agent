@@ -83,6 +83,14 @@ The ADK agent is defined in `sensor_filter_agent/agent.py` as `root_agent`.
 ```bash
 pixi run test
 ```
+or, for a direct interaction with the agent,
+
+```bash
+PYTHONPATH=. pixi run adk run sensor_filter_agent
+```
+```bash
+PYTHONPATH=. pixi run python -m sensor_filter_agent.cli
+```
 
 ## Assignment design decisions
 
@@ -102,6 +110,3 @@ Suggested configurations:
 - Configuration B: iterative behavior with enough steps for multi-condition questions. This is better for chained filters because each criterion requires a separate tool call.
 
 See `reports/report.md` for details.
-
-PYTHONPATH=. pixi run python -m sensor_filter_agent.cli
-PYTHONPATH=. pixi run adk run sensor_filter_agent
