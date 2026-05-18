@@ -1,0 +1,25 @@
+[workspace]
+name = "sensor-adk-assignment"
+version = "0.1.0"
+description = "Single-agent Google ADK sensor dataset filtering assignment"
+channels = ["conda-forge"]
+platforms = ["osx-arm64", "osx-64", "linux-64", "win-64"]
+
+[tasks]
+run = "PYTHONPATH=. python -m sensor_filter_agent.cli"
+test = "PYTHONPATH=. pytest -q"
+adk-web = "PYTHONPATH=. adk web"
+adk-run = "PYTHONPATH=. adk run sensor_filter_agent"
+
+[dependencies]
+python = ">=3.11,<3.13"
+pandas = ">=2.2"
+openpyxl = ">=3.1"
+pytest = ">=8.0"
+python-dotenv = ">=1.0"
+pip = ">=24.0"
+
+[pypi-dependencies]
+google-adk = ">=1.0.0"
+litellm = ">=1.60.0"
+openai = ">=1.0.0"
